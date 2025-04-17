@@ -6,6 +6,9 @@ import json
 import unittest
 from unittest.mock import patch, Mock
 
+import requests
+from requests.exceptions import RequestException
+
 from lightfeed import LightfeedClient
 from lightfeed.models import Condition, Operator, LightfeedError
 
@@ -186,16 +189,19 @@ class TestLightfeedClient(unittest.TestCase):
     @patch("requests.get")
     def test_error_handling(self, mock_get):
         """Test error handling"""
-        # Setup mock error response
-        error_response = Mock()
-        error_response.status_code = 401
-        error_response.json.return_value = {
+        # Create a RequestException with response attributes
+        mock_response = Mock()
+        mock_response.status_code = 401
+        mock_response.json.return_value = {
             "message": "Invalid API key"
         }
         
-        mock_error = Mock()
-        mock_error.response = error_response
-        mock_get.side_effect = mock_error
+        # Create the exception with the response
+        exception = RequestException("API Error")
+        exception.response = mock_response
+
+        # Make the request raise the exception
+        mock_get.side_effect = exception
 
         # Call the method and expect an error
         with self.assertRaises(LightfeedError) as context:
