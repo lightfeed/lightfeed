@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lightfeed"
+version = "0.1.0"
+description = "Official Lightfeed API Client for Python"
+readme = "README.md"
+authors = [
+    {name = "Lightfeed Team", email = "support@lightfeed.ai"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.7"
+dependencies = [
+    "requests>=2.25.0",
+    "typing-extensions>=4.0.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/lightfeed/lightfeed-python"
+"Bug Tracker" = "https://github.com/lightfeed/lightfeed-python/issues"
+
+[tool.setuptools]
+packages = ["lightfeed"]
+
+[tool.black]
+line-length = 88
+target-version = ["py37"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.7"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py" 
