@@ -3,6 +3,12 @@
 </p>
 
 <div align="center">
+  <a href="https://www.npmjs.com/package/lightfeed">
+    <img src="https://img.shields.io/npm/v/lightfeed?style=flat-square&logo=npm" alt="npm">
+  </a>
+  <a href="https://pypi.org/project/lightfeed/">
+    <img src="https://img.shields.io/pypi/v/lightfeed?style=flat-square&logo=pypi&logoColor=white" alt="PyPI">
+  </a>
   <a href="https://github.com/lightfeed/lightfeed/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/lightfeed/lightfeed?style=flat-square" alt="License">
   </a>
