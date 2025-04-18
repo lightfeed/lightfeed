@@ -15,8 +15,10 @@
     "web-extraction",
     "web-scraping",
     "web-data",
-    "api",
-    "client"
+    "business-intelligence",
+    "etl",
+    "data-integration",
+    "data-pipeline"
   ],
   "author": "Lightfeed Team",
   "license": "Apache-2.0",
@@ -24,6 +26,7 @@
     "type": "git",
     "url": "https://github.com/lightfeed/lightfeed"
   },
+  "homepage": "https://www.lightfeed.ai/docs/apis/",
   "devDependencies": {
     "@types/jest": "^29.5.0",
     "@types/node": "^18.15.0",
