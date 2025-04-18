@@ -150,11 +150,23 @@ interface LightfeedConfig {
 
 ### Methods
 
-Both TypeScript and Python clients provide the same set of methods:
+Both TypeScript and Python clients provide the same core functionality through the following methods:
 
-#### getRecords / get_records
+#### `getRecords` / `get_records`
 
 Retrieves records from a database with optional filtering by time range.
+
+**Parameters:**
+- `databaseId` (string): The ID of your Lightfeed database
+- `params` (optional): Query parameters
+  - `start_time` (string, optional): Start of time range (ISO 8601)
+  - `end_time` (string, optional): End of time range (ISO 8601)
+  - `limit` (number, optional): Maximum records to return (default: 100, max: 500)
+  - `cursor` (string, optional): Pagination cursor
+
+**Returns:** Records response containing results and pagination information
+
+**API Reference:** [Get Records API](https://www.lightfeed.ai/docs/apis/v1-database/records/) - Detailed specifications and examples
 
 ```typescript
 // TypeScript
@@ -164,9 +176,22 @@ client.getRecords(databaseId: string, params?: GetRecordsParams): Promise<Record
 client.get_records(database_id: str, params: Optional[GetRecordsParams]) -> RecordsResponse
 ```
 
-#### searchRecords / search_records
+#### `searchRecords` / `search_records`
 
 Performs semantic search on your database records with optional filtering.
+
+**Parameters:**
+- `databaseId` (string): The ID of your Lightfeed database
+- `params`: Search parameters
+  - `search.text` (string): The text to search for
+  - `search.threshold` (number, optional): Minimum relevance score (0-1)
+  - `filter` (object, optional): Filtering conditions
+  - `time_range` (object, optional): Time range constraints
+  - `pagination` (object, optional): Pagination options
+
+**Returns:** Records response containing results with relevance scores
+
+**API Reference:** [Search Records API](https://www.lightfeed.ai/docs/apis/v1-database/search/) - Detailed specifications and examples
 
 ```typescript
 // TypeScript
@@ -176,9 +201,20 @@ client.searchRecords(databaseId: string, params: SearchRecordsParams): Promise<R
 client.search_records(database_id: str, params: SearchRecordsParams) -> RecordsResponse
 ```
 
-#### filterRecords / filter_records
+#### `filterRecords` / `filter_records`
 
 Applies complex filtering conditions to database records.
+
+**Parameters:**
+- `databaseId` (string): The ID of your Lightfeed database
+- `params`: Filter parameters
+  - `filter` (object): Filtering conditions using rules and operators
+  - `time_range` (object, optional): Time range constraints
+  - `pagination` (object, optional): Pagination options
+
+**Returns:** Records response containing filtered results
+
+**API Reference:** [Filter Records API](https://www.lightfeed.ai/docs/apis/v1-database/filter/) - Detailed specifications and examples
 
 ```typescript
 // TypeScript
@@ -230,45 +266,97 @@ async function getAllRecords(databaseId: string) {
 }
 ```
 
+```python
+# Python example
+def get_all_records(database_id):
+    all_records = []
+    cursor = None
+    has_more = True
+    
+    while has_more:
+        params = {
+            "limit": 100
+        }
+        
+        if cursor:
+            params["cursor"] = cursor
+            
+        response = client.get_records(database_id, params)
+        
+        all_records.extend(response["results"])
+        cursor = response["pagination"]["next_cursor"]
+        has_more = response["pagination"]["has_more"]
+    
+    return all_records
+```
+
 ## Error Handling
 
-The client libraries throw custom errors that map to the standard HTTP error codes used by the Lightfeed API:
+The client libraries automatically handle HTTP errors from the API and convert them into structured `LightfeedError` objects. This provides a consistent error handling experience regardless of the underlying error type.
 
-- `400 Bad Request`: Invalid request parameters
-- `401 Unauthorized`: Invalid or missing API key
-- `403 Forbidden`: The API key doesn't have permission to access the resource
-- `404 Not Found`: The requested resource doesn't exist
-- `429 Too Many Requests`: Rate limit exceeded
-- `500 Internal Server Error`: Something went wrong on our end
+Each error object contains:
+- `status`: The HTTP status code (matches standard HTTP status codes)
+- `message`: A descriptive error message
+
+The status codes follow standard HTTP conventions:
+
+- `400`: Invalid request parameters
+- `401`: Invalid or missing API key
+- `403`: Permission denied
+- `404`: Resource not found
+- `429`: Rate limit exceeded
+- `500`: Internal server error
+
+### TypeScript Example
 
 ```typescript
-// TypeScript
 try {
   const records = await client.getRecords('your-database-id');
 } catch (error) {
+  // The client automatically converts API errors to LightfeedError objects
   console.error(`Error ${error.status}: ${error.message}`);
   
-  // Handle specific error types
-  if (error.status === 401) {
-    console.log('Please check your API key');
-  } else if (error.status === 429) {
-    console.log('Rate limit exceeded, please wait and try again');
+  // You can handle specific error types based on status code
+  switch (error.status) {
+    case 401:
+      console.log('Authentication failed. Please check your API key');
+      break;
+    case 404:
+      console.log('Database not found');
+      break;
+    case 429:
+      console.log('Rate limit exceeded. Please retry after a delay');
+      break;
+    default:
+      console.log('An unexpected error occurred');
   }
 }
+```
 
-// Python
+### Python Example
+
+```python
+from lightfeed import LightfeedError
+
 try:
     records = client.get_records("your-database-id")
 except LightfeedError as e:
+    # The client automatically converts API errors to LightfeedError objects
     print(f"Error {e.status}: {e.message}")
     
-    # Handle specific error types
+    # You can handle specific error types based on status code
     if e.status == 401:
-        print("Please check your API key")
+        print("Authentication failed. Please check your API key")
+    elif e.status == 404:
+        print("Database not found")
     elif e.status == 429:
-        print("Rate limit exceeded, please wait and try again")
+        print("Rate limit exceeded. Please retry after a delay")
+    else:
+        print("An unexpected error occurred")
 ```
 
 ## Support
 
-For support, please email support@lightfeed.ai or visit our [documentation](https://www.lightfeed.ai/docs).
+- **Docs:** [Documentation](https://www.lightfeed.ai/docs)
+- **Community:** [Discord](https://discord.gg/txZ2s4pgQJ)
+- **Contact:** support@lightfeed.ai
