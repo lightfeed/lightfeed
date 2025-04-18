@@ -1,20 +1,4 @@
-<p align="center">
-  <img src="https://www.lightfeed.ai/docs/img/logo.svg" width="128" height="128" alt="Lightfeed Logo">
-</p>
-
-<div align="center">
-  <a href="https://pypi.org/project/lightfeed/">
-    <img src="https://img.shields.io/pypi/v/lightfeed?style=flat-square&logo=pypi&logoColor=white" alt="PyPI">
-  </a>
-  <a href="https://github.com/lightfeed/lightfeed/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/lightfeed/lightfeed?style=flat-square" alt="License">
-  </a>
-  <a href="https://discord.gg/txZ2s4pgQJ" alt="Discord">
-    <img src="https://img.shields.io/discord/1209342987008614501?style=flat-square&label=discord&logo=discord&logoColor=white&color=5865F2" alt="Discord">
-  </a>
-</div>
-
-# ⚡️ Lightfeed
+# Lightfeed Python SDK
 
 Official Python client library for interacting with the Lightfeed API. Extract, search, and filter web data with a simple and intuitive interface.
 
