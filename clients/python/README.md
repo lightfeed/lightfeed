@@ -92,6 +92,8 @@ def search_for_companies():
 }
 ```
 
+### Methods
+
 #### `get_records`
 
 Retrieves records from a database with optional filtering by time range.

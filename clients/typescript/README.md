@@ -96,6 +96,8 @@ interface LightfeedConfig {
 }
 ```
 
+### Methods
+
 #### `getRecords`
 
 Retrieves records from a database with optional filtering by time range.
