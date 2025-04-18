@@ -2,6 +2,11 @@
   <img src="https://www.lightfeed.ai/docs/img/logo.svg" width="128" height="128" alt="Lightfeed Logo">
 </p>
 
+<div align="center">
+  [![License](https://img.shields.io/github/license/lightfeed/lightfeed?style=flat-square)](https://github.com/lightfeed/lightfeed/blob/main/LICENSE)
+  [![Discord](https://img.shields.io/discord/1209342987008614501?style=flat-square&label=discord&logo=discord&logoColor=white&color=5865F2)](https://discord.gg/txZ2s4pgQJ)
+</div>
+
 # Lightfeed
 
 Official client library for interacting with the Lightfeed API. This SDK enables real-time search and filtering of your extracted web data, with support for both Typescript and Python environments.
