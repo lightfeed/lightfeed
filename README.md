@@ -1,6 +1,6 @@
 # Lightfeed API Client
 
-Official client library for interacting with the Lightfeed API. This SDK enables easy access to your extracted web data, with support for both Typescript and Python environments.
+Official client library for interacting with the Lightfeed API. This SDK enables real-time search and filtering of your extracted web data, with support for both Typescript and Python environments.
 
 ## Features
 
