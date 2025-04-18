@@ -1,5 +1,3 @@
-# Lightfeed API Client for Node.js
-
 <p align="center">
   <img src="https://www.lightfeed.ai/docs/img/logo.svg" width="128" height="128" alt="Lightfeed Logo">
 </p>
@@ -15,6 +13,8 @@
     <img src="https://img.shields.io/discord/1209342987008614501?style=flat-square&label=discord&logo=discord&logoColor=white&color=5865F2" alt="Discord">
   </a>
 </div>
+
+# ⚡️ Lightfeed
 
 Official Node.js client library for interacting with the Lightfeed API. Extract, search, and filter web data with a simple and intuitive interface.
 
