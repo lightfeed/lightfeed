@@ -1,18 +1,18 @@
-# Lightfeed API SDK
+# Lightfeed API Client
 
-Official client library for interacting with the Lightfeed API. This SDK enables easy access to your extracted web data, with support for both Node.js (TypeScript) and Python environments.
+Official client library for interacting with the Lightfeed API. This SDK enables easy access to your extracted web data, with support for both Typescript and Python environments.
 
 ## Features
 
 - Simple and intuitive interface for accessing Lightfeed APIs
+- Semantic search and advanced filtering capabilities
 - Full TypeScript/Python type definitions for better developer experience
 - Comprehensive error handling
 - Support for pagination
-- Semantic search and advanced filtering capabilities
 
 ## Installation
 
-### Node.js / TypeScript
+### TypeScript / Node.js
 
 ```bash
 npm install lightfeed
@@ -26,7 +26,7 @@ pip install lightfeed
 
 ## Quick Start
 
-### Node.js / TypeScript
+### TypeScript / Node.js
 
 ```typescript
 import { LightfeedClient } from 'lightfeed';
