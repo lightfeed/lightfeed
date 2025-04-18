@@ -102,6 +102,18 @@ Retrieves records from a database with optional filtering by time range.
 client.get_records(database_id: str, params: Optional[GetRecordsParams]) -> RecordsResponse
 ```
 
+**Parameters:**
+- `databaseId` (string): The ID of your Lightfeed database
+- `params` (optional): Query parameters
+  - `start_time` (string, optional): Start of time range (ISO 8601)
+  - `end_time` (string, optional): End of time range (ISO 8601)
+  - `limit` (number, optional): Maximum records to return (default: 100, max: 500)
+  - `cursor` (string, optional): Pagination cursor
+
+**Returns:** Records response containing results and pagination information
+
+For detailed specifications and examples, see [Get Records API](https://www.lightfeed.ai/docs/apis/v1-database/records/)
+
 #### `search_records`
 
 Performs semantic search on your database records with optional filtering.
@@ -110,12 +122,46 @@ Performs semantic search on your database records with optional filtering.
 client.search_records(database_id: str, params: SearchRecordsParams) -> RecordsResponse
 ```
 
+**Parameters:**
+- `databaseId` (string): The ID of your Lightfeed database
+- `params`: Search parameters
+  - `search.text` (string): The text to search for
+  - `search.threshold` (number, optional): Minimum relevance score (0-1)
+  - `filter` (object, optional): Filtering conditions
+  - `time_range` (object, optional): Time range constraints
+  - `pagination` (object, optional): Pagination options
+
+**Returns:** Records response containing results with relevance scores
+
+For detailed specifications and examples, see [Search Records API](https://www.lightfeed.ai/docs/apis/v1-database/search/)
+
 #### `filter_records`
 
 Applies complex filtering conditions to database records.
 
 ```python
 client.filter_records(database_id: str, params: FilterRecordsParams) -> RecordsResponse
+```
+
+**Parameters:**
+- `databaseId` (string): The ID of your Lightfeed database
+- `params`: Filter parameters
+  - `filter` (object): Filtering conditions using rules and operators
+  - `time_range` (object, optional): Time range constraints
+  - `pagination` (object, optional): Pagination options
+
+**Returns:** Records response containing filtered results
+
+For detailed specifications and examples, see [Filter Records API](https://www.lightfeed.ai/docs/apis/v1-database/filter/)
+
+## Authentication
+
+All API requests require authentication using your Lightfeed API key. You can generate an API key in the Lightfeed dashboard under "API Keys".
+
+```python
+client = LightfeedClient({
+  "apiKey": "YOUR_API_KEY"
+})
 ```
 
 ## Error Handling

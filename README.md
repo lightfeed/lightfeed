@@ -179,6 +179,14 @@ Both TypeScript and Python clients provide the same core functionality through t
 
 Retrieves records from a database with optional filtering by time range.
 
+```typescript
+// TypeScript
+client.getRecords(databaseId: string, params?: GetRecordsParams): Promise<RecordsResponse>
+
+// Python
+client.get_records(database_id: str, params: Optional[GetRecordsParams]) -> RecordsResponse
+```
+
 **Parameters:**
 - `databaseId` (string): The ID of your Lightfeed database
 - `params` (optional): Query parameters
@@ -191,17 +199,17 @@ Retrieves records from a database with optional filtering by time range.
 
 For detailed specifications and examples, see [Get Records API](https://www.lightfeed.ai/docs/apis/v1-database/records/)
 
-```typescript
-// TypeScript
-client.getRecords(databaseId: string, params?: GetRecordsParams): Promise<RecordsResponse>
-
-// Python
-client.get_records(database_id: str, params: Optional[GetRecordsParams]) -> RecordsResponse
-```
-
 #### `searchRecords` / `search_records`
 
 Performs semantic search on your database records with optional filtering.
+
+```typescript
+// TypeScript
+client.searchRecords(databaseId: string, params: SearchRecordsParams): Promise<RecordsResponse>
+
+// Python
+client.search_records(database_id: str, params: SearchRecordsParams) -> RecordsResponse
+```
 
 **Parameters:**
 - `databaseId` (string): The ID of your Lightfeed database
@@ -216,17 +224,17 @@ Performs semantic search on your database records with optional filtering.
 
 For detailed specifications and examples, see [Search Records API](https://www.lightfeed.ai/docs/apis/v1-database/search/)
 
-```typescript
-// TypeScript
-client.searchRecords(databaseId: string, params: SearchRecordsParams): Promise<RecordsResponse>
-
-// Python
-client.search_records(database_id: str, params: SearchRecordsParams) -> RecordsResponse
-```
-
 #### `filterRecords` / `filter_records`
 
 Applies complex filtering conditions to database records.
+
+```typescript
+// TypeScript
+client.filterRecords(databaseId: string, params: FilterRecordsParams): Promise<RecordsResponse>
+
+// Python
+client.filter_records(database_id: str, params: FilterRecordsParams) -> RecordsResponse
+```
 
 **Parameters:**
 - `databaseId` (string): The ID of your Lightfeed database
@@ -238,14 +246,6 @@ Applies complex filtering conditions to database records.
 **Returns:** Records response containing filtered results
 
 For detailed specifications and examples, see [Filter Records API](https://www.lightfeed.ai/docs/apis/v1-database/filter/)
-
-```typescript
-// TypeScript
-client.filterRecords(databaseId: string, params: FilterRecordsParams): Promise<RecordsResponse>
-
-// Python
-client.filter_records(database_id: str, params: FilterRecordsParams) -> RecordsResponse
-```
 
 ## Authentication
 
