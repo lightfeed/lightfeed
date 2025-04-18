@@ -3,8 +3,12 @@
 </p>
 
 <div align="center">
-  [![License](https://img.shields.io/github/license/lightfeed/lightfeed?style=flat-square)](https://github.com/lightfeed/lightfeed/blob/main/LICENSE)
-  [![Discord](https://img.shields.io/discord/1209342987008614501?style=flat-square&label=discord&logo=discord&logoColor=white&color=5865F2)](https://discord.gg/txZ2s4pgQJ)
+  <a href="https://github.com/lightfeed/lightfeed/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/lightfeed/lightfeed?style=flat-square" alt="License">
+  </a>
+  <a href="https://discord.gg/txZ2s4pgQJ" alt="Discord">
+    <img src="https://img.shields.io/discord/1209342987008614501?style=flat-square&label=discord&logo=discord&logoColor=white&color=5865F2" alt="Discord">
+  </a>
 </div>
 
 # Lightfeed
