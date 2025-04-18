@@ -166,7 +166,7 @@ Retrieves records from a database with optional filtering by time range.
 
 **Returns:** Records response containing results and pagination information
 
-**API Reference:** [Get Records API](https://www.lightfeed.ai/docs/apis/v1-database/records/) - Detailed specifications and examples
+For detailed specifications and examples, see [Get Records API](https://www.lightfeed.ai/docs/apis/v1-database/records/)
 
 ```typescript
 // TypeScript
@@ -191,7 +191,7 @@ Performs semantic search on your database records with optional filtering.
 
 **Returns:** Records response containing results with relevance scores
 
-**API Reference:** [Search Records API](https://www.lightfeed.ai/docs/apis/v1-database/search/) - Detailed specifications and examples
+For detailed specifications and examples, see [Search Records API](https://www.lightfeed.ai/docs/apis/v1-database/search/)
 
 ```typescript
 // TypeScript
@@ -214,7 +214,7 @@ Applies complex filtering conditions to database records.
 
 **Returns:** Records response containing filtered results
 
-**API Reference:** [Filter Records API](https://www.lightfeed.ai/docs/apis/v1-database/filter/) - Detailed specifications and examples
+For detailed specifications and examples, see [Filter Records API](https://www.lightfeed.ai/docs/apis/v1-database/filter/)
 
 ```typescript
 // TypeScript
@@ -355,8 +355,21 @@ except LightfeedError as e:
         print("An unexpected error occurred")
 ```
 
+## Documentation
+
+For comprehensive documentation and guides, visit the [Lightfeed Documentation](https://www.lightfeed.ai/docs).
+
+## Community
+
+Join our [Discord community](https://discord.gg/txZ2s4pgQJ) to:
+- Connect with other Lightfeed users
+- Get help with implementation questions
+- Share use cases and best practices
+- Stay updated on new features and releases
+
 ## Support
 
-- **Docs:** [Documentation](https://www.lightfeed.ai/docs)
-- **Community:** [Discord](https://discord.gg/txZ2s4pgQJ)
-- **Contact:** support@lightfeed.ai
+If you need direct assistance with your implementation:
+- Email us at support@lightfeed.ai
+- Open an issue in this repository
+- Post your question in our [Discord community](https://discord.gg/txZ2s4pgQJ)
