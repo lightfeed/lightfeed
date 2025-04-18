@@ -16,7 +16,7 @@
 <div>
   <p align="center">
     <a href="https://lightfeed.ai/docs">
-      <img src="https://img.shields.io/badge/docs-lightfeed.ai/docs-3E63DD" alt="Lightfeed Documentation" >
+      <img src="https://img.shields.io/badge/docs-lightfeed.ai-3E63DD" alt="Lightfeed Documentation" >
     </a>
     <a href="https://discord.gg/txZ2s4pgQJ" alt="Discord">
       <img src="https://img.shields.io/discord/1209342987008614501?style=flat-square&label=discord&logo=discord&logoColor=white&color=5865F2" alt="Discord">
