@@ -10,14 +10,14 @@ readme = "README.md"
 authors = [
     {name = "Lightfeed Team", email = "support@lightfeed.ai"}
 ]
-license = {text = "MIT"}
+license = {text = "Apache-2.0"}
 classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
-    "License :: OSI Approved :: MIT License",
+    "License :: OSI Approved :: Apache Software License",
     "Operating System :: OS Independent",
 ]
 requires-python = ">=3.7"
@@ -27,8 +27,8 @@ dependencies = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/lightfeed/lightfeed-python"
-"Bug Tracker" = "https://github.com/lightfeed/lightfeed-python/issues"
+"Homepage" = "https://github.com/lightfeed/lightfeed"
+"Bug Tracker" = "https://github.com/lightfeed/lightfeed/issues"
 
 [tool.setuptools]
 packages = ["lightfeed"]
