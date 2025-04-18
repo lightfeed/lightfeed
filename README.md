@@ -1,32 +1,25 @@
 <p align="center">
-  <img src="https://www.lightfeed.ai/docs/img/logo.svg" width="128" height="128" alt="Lightfeed Logo">
+  <img src="https://www.lightfeed.ai/docs/img/logo.svg" width="128" height="128" alt="Lightfeed Logo" />
 </p>
 
 <div align="center">
   <a href="https://www.npmjs.com/package/lightfeed">
-    <img src="https://img.shields.io/npm/v/lightfeed?logo=npm" alt="npm">
-  </a>
+    <img src="https://img.shields.io/npm/v/lightfeed?logo=npm" alt="npm" /></a>
   <a href="https://pypi.org/project/lightfeed/">
-    <img src="https://img.shields.io/pypi/v/lightfeed?logo=pypi&logoColor=white" alt="PyPI">
-  </a>
+    <img src="https://img.shields.io/pypi/v/lightfeed?logo=pypi&logoColor=white" alt="PyPI" /></a>
   <a href="https://github.com/lightfeed/lightfeed/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/lightfeed/lightfeed" alt="License">
-  </a>
+    <img src="https://img.shields.io/github/license/lightfeed/lightfeed" alt="License" /></a>
 </div>
 <div>
   <p align="center">
     <a href="https://lightfeed.ai/docs">
-      <img src="https://img.shields.io/badge/docs-lightfeed.ai-3E63DD" alt="Lightfeed Documentation" >
-    </a>
+      <img src="https://img.shields.io/badge/docs-lightfeed.ai-3E63DD" alt="Lightfeed Documentation" /></a>
     <a href="https://discord.gg/txZ2s4pgQJ" alt="Discord">
-      <img src="https://img.shields.io/discord/1209342987008614501?label=discord&logo=discord&logoColor=white&color=5865F2" alt="Discord">
-    </a>
+      <img src="https://img.shields.io/discord/1209342987008614501?label=chat&logo=discord&logoColor=white&color=5865F2" alt="Discord" /></a>
     <a href="https://www.linkedin.com/company/lightfeed-ai">
-      <img src="https://img.shields.io/badge/Follow%20on%20LinkedIn-0A66C2?logo=linkedin&logoColor=white" alt="Follow on LinkedIn" />
-    </a>
+      <img src="https://img.shields.io/badge/Follow%20on%20LinkedIn-0A66C2?logo=linkedin&logoColor=white" alt="Follow on LinkedIn" /></a>
     <a href="https://twitter.com/lightfeed_ai">
-      <img src="https://img.shields.io/badge/Follow%20on%20X-202020?logo=x&logoColor=white" alt="Follow on X" />
-    </a>
+      <img src="https://img.shields.io/badge/Follow%20on%20X-202020?logo=x&logoColor=white" alt="Follow on X" /></a>
   </p>
 </div>
 
