@@ -1,4 +1,11 @@
-# Lightfeed API Client
+<h3 align="center">
+  <img
+    src="https://www.lightfeed.ai/docs/img/logo.svg"
+    height="200"
+  >
+</h3>
+
+# Lightfeed
 
 Official client library for interacting with the Lightfeed API. This SDK enables real-time search and filtering of your extracted web data, with support for both Typescript and Python environments.
 
