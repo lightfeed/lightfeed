@@ -1,0 +1,13 @@
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.project
+.settings
+.classpath
+.factorypath
+
+# OS files
+.DS_Store
+Thumbs.db

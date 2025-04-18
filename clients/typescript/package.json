@@ -1,0 +1,46 @@
+{
+  "name": "lightfeed",
+  "version": "0.1.0",
+  "description": "Official Lightfeed API Client for Node.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "lint": "eslint . --ext .ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "lightfeed",
+    "web-extraction",
+    "web-scraping",
+    "web-data",
+    "business-intelligence",
+    "etl",
+    "data-integration",
+    "data-pipeline"
+  ],
+  "author": "Lightfeed Team",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lightfeed/lightfeed"
+  },
+  "homepage": "https://www.lightfeed.ai/docs/apis/",
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^18.15.0",
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "@typescript-eslint/parser": "^5.56.0",
+    "eslint": "^8.36.0",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "axios": "^1.3.4"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+} 
