@@ -232,7 +232,14 @@ async function getAllRecords(databaseId: string) {
 
 ## Error Handling
 
-The client libraries throw custom errors that include details about what went wrong.
+The client libraries throw custom errors that map to the standard HTTP error codes used by the Lightfeed API:
+
+- `400 Bad Request`: Invalid request parameters
+- `401 Unauthorized`: Invalid or missing API key
+- `403 Forbidden`: The API key doesn't have permission to access the resource
+- `404 Not Found`: The requested resource doesn't exist
+- `429 Too Many Requests`: Rate limit exceeded
+- `500 Internal Server Error`: Something went wrong on our end
 
 ```typescript
 // TypeScript
@@ -240,7 +247,13 @@ try {
   const records = await client.getRecords('your-database-id');
 } catch (error) {
   console.error(`Error ${error.status}: ${error.message}`);
-  console.error('Details:', error.details);
+  
+  // Handle specific error types
+  if (error.status === 401) {
+    console.log('Please check your API key');
+  } else if (error.status === 429) {
+    console.log('Rate limit exceeded, please wait and try again');
+  }
 }
 
 // Python
@@ -248,8 +261,12 @@ try:
     records = client.get_records("your-database-id")
 except LightfeedError as e:
     print(f"Error {e.status}: {e.message}")
-    if e.details:
-        print(f"Details: {e.details}")
+    
+    # Handle specific error types
+    if e.status == 401:
+        print("Please check your API key")
+    elif e.status == 429:
+        print("Rate limit exceeded, please wait and try again")
 ```
 
 ## Requirements

@@ -2,8 +2,8 @@
 Lightfeed API Client type definitions
 """
 
-from enum import Enum, auto
-from typing import Dict, List, Optional, Union, Any, TypedDict
+from enum import Enum, auto, IntEnum
+from typing import Dict, List, Optional, Union, Any, TypedDict, Literal
 
 
 class LightfeedConfig(TypedDict, total=False):
@@ -138,14 +138,56 @@ class FilterRecordsParams(TypedDict, total=False):
     pagination: Optional[PaginationParams]  # Pagination parameters (optional)
 
 
+# Define valid error status codes
+class ErrorStatus(IntEnum):
+    """Valid API error status codes"""
+    BAD_REQUEST = 400
+    UNAUTHORIZED = 401
+    FORBIDDEN = 403
+    NOT_FOUND = 404
+    RATE_LIMIT_EXCEEDED = 429
+    INTERNAL_SERVER_ERROR = 500
+
+
 class LightfeedError(Exception):
     """Error from the Lightfeed API"""
     
-    def __init__(self, status: int, message: str, details: Optional[Any] = None):
+    def __init__(self, status: int, message: str):
+        """
+        Initialize a Lightfeed API error
+        
+        Args:
+            status: HTTP status code (400, 401, 403, 404, 429, or 500)
+            message: Error message from the API
+        """
+        # Validate the status code is one of the expected ones
+        if status not in [400, 401, 403, 404, 429, 500]:
+            status = 500  # Default to internal server error for unexpected codes
+            
         self.status = status
         self.message = message
-        self.details = details
         super().__init__(f"Lightfeed API Error ({status}): {message}")
 
     def __repr__(self) -> str:
-        return f"LightfeedError(status={self.status}, message='{self.message}')" 
+        return f"LightfeedError(status={self.status}, message='{self.message}')"
+        
+    @staticmethod
+    def get_default_message(status: int) -> str:
+        """
+        Get the default error message for a given status code
+        
+        Args:
+            status: HTTP status code
+            
+        Returns:
+            Default error message for the status code
+        """
+        messages = {
+            400: "Invalid request parameters",
+            401: "Invalid or missing API key",
+            403: "The API key doesn't have permission to access the resource",
+            404: "The requested resource doesn't exist",
+            429: "Rate limit exceeded",
+            500: "Something went wrong on our end"
+        }
+        return messages.get(status, "Unknown error") 

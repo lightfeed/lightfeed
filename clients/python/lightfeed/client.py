@@ -151,15 +151,17 @@ class LightfeedClient:
             response = error.response
             status_code = response.status_code
             
+            # Ensure status code is one of the expected ones
+            if status_code not in [400, 401, 403, 404, 429, 500]:
+                status_code = 500  # Default to internal server error
+                
             try:
                 error_data = response.json()
-                message = error_data.get("message", str(error))
-                details = error_data.get("details", error_data)
+                message = error_data.get("message", LightfeedError.get_default_message(status_code))
             except (ValueError, json.JSONDecodeError):
-                message = response.text or str(error)
-                details = None
+                message = response.text or LightfeedError.get_default_message(status_code)
                 
-            return LightfeedError(status_code, message, details)
+            return LightfeedError(status_code, message)
         
         # For network errors, connection issues, etc.
         return LightfeedError(500, str(error)) 

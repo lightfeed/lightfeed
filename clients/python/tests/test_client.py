@@ -199,7 +199,7 @@ class TestLightfeedClient(unittest.TestCase):
         # Create the exception with the response
         exception = RequestException("API Error")
         exception.response = mock_response
-
+        
         # Make the request raise the exception
         mock_get.side_effect = exception
 
@@ -210,6 +210,31 @@ class TestLightfeedClient(unittest.TestCase):
         # Verify the error
         self.assertEqual(context.exception.status, 401)
         self.assertEqual(context.exception.message, "Invalid API key")
+        
+    @patch("requests.get")
+    def test_error_handling_with_unknown_status(self, mock_get):
+        """Test error handling with an unknown status code"""
+        # Create a RequestException with response attributes and an unexpected status code
+        mock_response = Mock()
+        mock_response.status_code = 418  # I'm a teapot (not in our expected codes)
+        mock_response.json.return_value = {
+            "message": "I'm a teapot"
+        }
+        
+        # Create the exception with the response
+        exception = RequestException("API Error")
+        exception.response = mock_response
+        
+        # Make the request raise the exception
+        mock_get.side_effect = exception
+
+        # Call the method and expect an error
+        with self.assertRaises(LightfeedError) as context:
+            self.client.get_records("test-db-id")
+
+        # Verify the error is normalized to 500
+        self.assertEqual(context.exception.status, 500)
+        self.assertEqual(context.exception.message, "I'm a teapot")  # Original message is preserved
 
 
 if __name__ == "__main__":

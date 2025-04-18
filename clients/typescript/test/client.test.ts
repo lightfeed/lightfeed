@@ -104,7 +104,10 @@ describe("LightfeedClient", () => {
       mockedAxios.get.mockRejectedValueOnce(error);
 
       // Skip checking the exact error structure since it's hard to mock
-      await expect(client.getRecords("test-db-id")).rejects.toBeTruthy();
+      await expect(client.getRecords("test-db-id")).rejects.toEqual({
+        status: 500,
+        message: "API error",
+      });
     });
   });
 

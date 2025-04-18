@@ -9,6 +9,7 @@ import {
   SearchRecordsParams,
   FilterRecordsParams,
   LightfeedError,
+  LightfeedErrorStatus,
 } from "./types";
 
 /**
@@ -128,10 +129,16 @@ export class LightfeedClient {
       const status = axiosError.response?.status || 500;
       const responseData = axiosError.response?.data as any;
 
+      // Validate that status is one of the expected error codes
+      // If not, default to 500
+      const validStatus = [400, 401, 403, 404, 429, 500].includes(status)
+        ? (status as LightfeedErrorStatus)
+        : 500;
+
       return {
-        status,
-        message: responseData?.message || axiosError.message || "Unknown error",
-        details: responseData?.details || responseData,
+        status: validStatus,
+        message:
+          responseData?.message || this.getDefaultErrorMessage(validStatus),
       };
     }
 
@@ -140,5 +147,29 @@ export class LightfeedClient {
       status: 500,
       message: error instanceof Error ? error.message : "Unknown error",
     };
+  }
+
+  /**
+   * Gets a default error message for a given status code
+   *
+   * @param status HTTP status code
+   * @returns A default error message
+   */
+  private getDefaultErrorMessage(status: LightfeedErrorStatus): string {
+    switch (status) {
+      case 400:
+        return "Invalid request parameters";
+      case 401:
+        return "Invalid or missing API key";
+      case 403:
+        return "The API key doesn't have permission to access the resource";
+      case 404:
+        return "The requested resource doesn't exist";
+      case 429:
+        return "Rate limit exceeded";
+      case 500:
+      default:
+        return "Something went wrong on our end";
+    }
   }
 }

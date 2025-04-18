@@ -180,13 +180,22 @@ export interface FilterRecordsParams {
 }
 
 /**
+ * API error status codes
+ */
+export type LightfeedErrorStatus =
+  | 400 // Bad Request: Invalid request parameters
+  | 401 // Unauthorized: Invalid or missing API key
+  | 403 // Forbidden: The API key doesn't have permission
+  | 404 // Not Found: The requested resource doesn't exist
+  | 429 // Too Many Requests: Rate limit exceeded
+  | 500; // Internal Server Error: Something went wrong on our end
+
+/**
  * Error from the Lightfeed API
  */
 export interface LightfeedError {
   /** HTTP status code */
-  status: number;
+  status: LightfeedErrorStatus;
   /** Error message */
   message: string;
-  /** Error details (if available) */
-  details?: any;
 }
