@@ -22,12 +22,3 @@ yarn-error.log*
 .env
 .env.*
 
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS files
-.DS_Store
-Thumbs.db

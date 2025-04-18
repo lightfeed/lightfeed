@@ -43,12 +43,4 @@ coverage.xml
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
 
-# OS files
-.DS_Store
-Thumbs.db

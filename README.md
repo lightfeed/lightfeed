@@ -1,6 +1,6 @@
-# Lightfeed API Client Libraries
+# Lightfeed API SDK
 
-Official client libraries for interacting with the Lightfeed API. These libraries enable easy access to your extracted web data, with support for both Node.js (TypeScript) and Python environments.
+Official client library for interacting with the Lightfeed API. This SDK enables easy access to your extracted web data, with support for both Node.js (TypeScript) and Python environments.
 
 ## Features
 
@@ -268,44 +268,6 @@ except LightfeedError as e:
     elif e.status == 429:
         print("Rate limit exceeded, please wait and try again")
 ```
-
-## Requirements
-
-### Node.js / TypeScript
-
-- Node.js 14+
-- TypeScript 4.5+ (for TypeScript users)
-
-### Python
-
-- Python 3.7+
-- requests
-
-## Development
-
-```bash
-# Clone the repo
-git clone https://github.com/lightfeed/lightfeed-api-clients.git
-cd lightfeed-api-clients
-
-# TypeScript client
-cd clients/typescript
-npm install
-npm test
-
-# Python client
-cd clients/python
-pip install -e ".[dev]"
-pytest
-```
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Support
 
