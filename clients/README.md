@@ -1,6 +1,4 @@
-# Lightfeed API Clients
-
-This repository contains the official client libraries for interacting with the Lightfeed API, enabling real-time search and filtering of extracted web data.
+# Lightfeed API Clients and Release Process
 
 ## Available Clients
 
@@ -88,7 +86,3 @@ These tags will trigger the corresponding GitHub Actions workflow to build, crea
    - Add release notes
    - Publish the release
    - Repeat for the Python tag
-
-## License
-
-This project is licensed under the Apache 2.0 License - see the [LICENSE](../LICENSE) file for details. 
