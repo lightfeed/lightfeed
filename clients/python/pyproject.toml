@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "lightfeed"
 version = "0.1.0"
-description = "Official Lightfeed API Client for Python"
+description = "Lightfeed API Client for Python"
 readme = "README.md"
 authors = [
     {name = "Lightfeed Team", email = "support@lightfeed.ai"}
