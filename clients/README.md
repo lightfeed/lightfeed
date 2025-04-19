@@ -108,10 +108,6 @@ These tags will trigger the corresponding GitHub Actions workflow to build, crea
    - Publish the release
    - Repeat for the Python tag
 
-## Contributing
-
-Please refer to our [Contributing Guidelines](../CONTRIBUTING.md) for details on how to contribute to this project.
-
 ## License
 
 This project is licensed under the Apache 2.0 License - see the [LICENSE](../LICENSE) file for details. 
