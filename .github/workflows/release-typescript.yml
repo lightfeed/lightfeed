@@ -31,19 +31,6 @@ jobs:
       - name: Build package
         run: npm run build
 
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: |
-            ./clients/typescript/README.md
-            ./clients/typescript/LICENSE
-          name: TypeScript Client ${{ github.ref_name }}
-          body_path: ${{ github.workspace }}/clients/typescript/CHANGELOG.md
-          draft: false
-          prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Publish to npm
         run: npm publish
         env:
