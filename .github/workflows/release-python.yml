@@ -11,44 +11,29 @@ jobs:
     defaults:
       run:
         working-directory: ./clients/python
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-      
+
       - name: Install build dependencies
         run: |
           python -m pip install --upgrade pip
           pip install build twine pytest
-      
+
       - name: Run tests
         run: pytest
-      
+
       - name: Build package
         run: python -m build
-      
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: |
-            ./clients/python/README.md
-            ./clients/python/LICENSE
-            ./clients/python/dist/*.whl
-            ./clients/python/dist/*.tar.gz
-          name: Python Client ${{ github.ref_name }}
-          body_path: ${{ github.workspace }}/clients/python/CHANGELOG.md
-          draft: false
-          prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
+
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
-          packages-dir: ./clients/python/dist/ 
+          packages-dir: ./clients/python/dist/
