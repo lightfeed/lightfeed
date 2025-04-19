@@ -26,6 +26,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install build twine pytest
 
+      - name: Install package in development mode
+        run: |
+          pip install -e .
+
       - name: Run tests
         run: pytest
 
