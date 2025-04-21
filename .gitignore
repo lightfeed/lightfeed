@@ -8,6 +8,9 @@
 .classpath
 .factorypath
 
+# Env files
+*.env
+
 # OS files
 .DS_Store
 Thumbs.db

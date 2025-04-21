@@ -93,7 +93,7 @@ class LightfeedClient:
         Raises:
             LightfeedError: If the API request fails
         """
-        url = f"{self.base_url}/v1/databases/{database_id}/search"
+        url = f"{self.base_url}/v1/databases/{database_id}/records/search"
         
         try:
             response = requests.post(
@@ -123,7 +123,7 @@ class LightfeedClient:
         Raises:
             LightfeedError: If the API request fails
         """
-        url = f"{self.base_url}/v1/databases/{database_id}/filter"
+        url = f"{self.base_url}/v1/databases/{database_id}/records/filter"
         
         try:
             response = requests.post(
