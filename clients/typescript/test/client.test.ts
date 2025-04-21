@@ -145,7 +145,7 @@ describe("LightfeedClient", () => {
       const result = await client.searchRecords("test-db-id", params);
 
       expect(mockedAxios.post).toHaveBeenCalledWith(
-        "/v1/databases/test-db-id/search",
+        "/v1/databases/test-db-id/records/search",
         params
       );
       expect(result).toEqual(mockResponse);
@@ -191,7 +191,7 @@ describe("LightfeedClient", () => {
       const result = await client.filterRecords("test-db-id", params);
 
       expect(mockedAxios.post).toHaveBeenCalledWith(
-        "/v1/databases/test-db-id/filter",
+        "/v1/databases/test-db-id/records/filter",
         params
       );
       expect(result).toEqual(mockResponse);

@@ -120,7 +120,7 @@ class TestLightfeedClient(unittest.TestCase):
 
         # Verify the request
         mock_post.assert_called_once_with(
-            "https://api.lightfeed.ai/v1/databases/test-db-id/search",
+            "https://api.lightfeed.ai/v1/databases/test-db-id/records/search",
             headers={
                 "x-api-key": "test-api-key",
                 "Content-Type": "application/json"
@@ -174,7 +174,7 @@ class TestLightfeedClient(unittest.TestCase):
 
         # Verify the request
         mock_post.assert_called_once_with(
-            "https://api.lightfeed.ai/v1/databases/test-db-id/filter",
+            "https://api.lightfeed.ai/v1/databases/test-db-id/records/filter",
             headers={
                 "x-api-key": "test-api-key",
                 "Content-Type": "application/json"
