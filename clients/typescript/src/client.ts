@@ -86,7 +86,7 @@ export class LightfeedClient {
   ): Promise<RecordsResponse> {
     try {
       const response = await this.httpClient.post(
-        `/v1/databases/${databaseId}/search`,
+        `/v1/databases/${databaseId}/records/search`,
         params
       );
       return response.data;
@@ -108,7 +108,7 @@ export class LightfeedClient {
   ): Promise<RecordsResponse> {
     try {
       const response = await this.httpClient.post(
-        `/v1/databases/${databaseId}/filter`,
+        `/v1/databases/${databaseId}/records/filter`,
         params
       );
       return response.data;
