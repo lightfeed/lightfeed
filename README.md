@@ -28,7 +28,7 @@
 Official client library for interacting with the Lightfeed API. This SDK enables real-time search and filtering of your extracted web data, with support for both Typescript and Python environments.
 
 <p align="center">
-  <img src="https://www.lightfeed.ai/docs/img/hero.png" alt="Lightfeed Extract" width="100%">
+  <img src="https://www.lightfeed.ai/docs/img/blog/introducing-lightfeed-extract.png" alt="Lightfeed Extract" width="100%">
 </p>
 
 ## Features
