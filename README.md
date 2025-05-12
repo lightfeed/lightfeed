@@ -8,8 +8,8 @@
   <a href="https://pypi.org/project/lightfeed/">
     <img src="https://img.shields.io/pypi/v/lightfeed?logo=pypi&logoColor=white" alt="PyPI" /></a>
   <a href="https://github.com/lightfeed/lightfeed/actions/workflows/ci.yml">
-    <img src="https://img.shields.io/github/actions/workflow/status/lightfeed/lightfeed/ci.yml"
-        alt="Test status"></a>
+    <img src="https://img.shields.io/github/actions/workflow/status/lightfeed/lightfeed/ci.yml?branch=main"
+        alt="Test status (main branch)"></a>
   <a href="https://github.com/lightfeed/lightfeed/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/lightfeed/lightfeed" alt="License" /></a>
 </div>
