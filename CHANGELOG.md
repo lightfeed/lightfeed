@@ -10,6 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Automated release workflows for Python and TypeScript clients
 - CHANGELOG tracking
 
+## [ts-0.1.4] - 2025-05-11
+### Added
+- Initial CI/CD setup
+- Automated release workflows for Python and TypeScript clients
+- CHANGELOG tracking
+
 ## [py-0.1.3 & ts-0.1.3] - 2024-04-21
 ### Fixed
 - Fixed Search and Filter APIs to use the correct endpoints 
