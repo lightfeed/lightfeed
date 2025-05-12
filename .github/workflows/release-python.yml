@@ -5,6 +5,10 @@ on:
     tags:
       - 'py-v*' # This will trigger on tags like py-v1.0.0
 
+permissions:
+  contents: write
+  packages: write
+
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
@@ -15,6 +19,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Fetch all history for release notes
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -36,8 +42,39 @@ jobs:
       - name: Build package
         run: python -m build
 
+      - name: Generate release notes
+        id: release
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/py-}
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          # Extract changes from CHANGELOG if available, otherwise from git log
+          if [ -f "../../CHANGELOG.md" ]; then
+            CHANGES=$(awk -v ver="$VERSION" '/^## \['"$VERSION"'\]/{flag=1; next} /^## \[/{flag=0} flag' ../../CHANGELOG.md)
+            if [ -z "$CHANGES" ]; then
+              CHANGES=$(git log --pretty=format:"* %s (%h)" $(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || git rev-list --max-parents=0 HEAD)..HEAD -- ./clients/python || echo "Initial release")
+            fi
+          else
+            CHANGES=$(git log --pretty=format:"* %s (%h)" $(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || git rev-list --max-parents=0 HEAD)..HEAD -- ./clients/python || echo "Initial release")
+          fi
+          echo "CHANGES<<EOF" >> $GITHUB_ENV
+          echo "$CHANGES" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
           packages-dir: ./clients/python/dist/
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Python Release ${{ steps.release.outputs.version }}
+          body: |
+            ## Changes in this Python release
+            
+            ${{ env.CHANGES }}
+            
+            For full details, see the [CHANGELOG](https://github.com/lightfeed/lightfeed/blob/main/CHANGELOG.md).
+          draft: false
+          prerelease: false
