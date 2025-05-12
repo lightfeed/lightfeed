@@ -7,6 +7,9 @@
     <img src="https://img.shields.io/npm/v/lightfeed?logo=npm" alt="npm" /></a>
   <a href="https://pypi.org/project/lightfeed/">
     <img src="https://img.shields.io/pypi/v/lightfeed?logo=pypi&logoColor=white" alt="PyPI" /></a>
+  <a href="https://github.com/lightfeed/lightfeed/actions/workflows/ci.yml">
+    <img src="https://img.shields.io/github/actions/workflow/status/lightfeed/lightfeed/ci.yml"
+        alt="Test status"></a>
   <a href="https://github.com/lightfeed/lightfeed/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/lightfeed/lightfeed" alt="License" /></a>
 </div>
@@ -402,31 +405,3 @@ If you need direct assistance with your implementation:
 - Email us at support@lightfeed.ai
 - Open an issue in this repository
 - Post your question in our [Discord community](https://discord.gg/txZ2s4pgQJ)
-
-## Release Process
-
-This project uses GitHub Actions for CI/CD and automated releases.
-
-### Continuous Integration
-
-All commits to the `main` branch automatically trigger tests for both Python and TypeScript clients.
-
-### Release Process
-
-1. Update the `CHANGELOG.md` with your changes under the appropriate version section
-2. Commit your changes and push to main
-3. Create and push a tag to trigger a release:
-   - For Python releases: `git tag py-v1.0.0 && git push origin py-v1.0.0`
-   - For TypeScript releases: `git tag ts-v1.0.0 && git push origin ts-v1.0.0`
-
-The release workflow will:
-1. Run tests to ensure everything is working
-2. Build the package
-3. Publish to PyPI (Python) or npm (TypeScript)
-4. Create a GitHub release with notes from the CHANGELOG
-
-### Release Notes
-
-Release notes are automatically generated from:
-1. The CHANGELOG.md file (preferred)
-2. Git commit history if no CHANGELOG entry is found
