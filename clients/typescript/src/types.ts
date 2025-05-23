@@ -117,14 +117,16 @@ export type Condition = "AND" | "OR";
 export type Operator =
   | "equals"
   | "not_equals"
-  | "contains"
-  | "not_contains"
   | "greater_than"
   | "less_than"
-  | "in"
-  | "not_in"
-  | "exists"
-  | "not_exists";
+  | "greater_than_or_equals"
+  | "less_than_or_equals"
+  | "contains"
+  | "not_contains"
+  | "starts_with"
+  | "ends_with"
+  | "is_empty"
+  | "is_not_empty";
 
 /**
  * Simple filter rule for a single column

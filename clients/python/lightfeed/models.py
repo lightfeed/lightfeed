@@ -88,14 +88,16 @@ class Operator(str, Enum):
     
     EQUALS = "equals"
     NOT_EQUALS = "not_equals"
-    CONTAINS = "contains"
-    NOT_CONTAINS = "not_contains"
     GREATER_THAN = "greater_than"
     LESS_THAN = "less_than"
-    IN = "in"
-    NOT_IN = "not_in"
-    EXISTS = "exists"
-    NOT_EXISTS = "not_exists"
+    GREATER_THAN_OR_EQUALS = "greater_than_or_equals"
+    LESS_THAN_OR_EQUALS = "less_than_or_equals"
+    CONTAINS = "contains"
+    NOT_CONTAINS = "not_contains"
+    STARTS_WITH = "starts_with"
+    ENDS_WITH = "ends_with"
+    IS_EMPTY = "is_empty"
+    IS_NOT_EMPTY = "is_not_empty"
 
 
 class ColumnRule(TypedDict, total=False):
