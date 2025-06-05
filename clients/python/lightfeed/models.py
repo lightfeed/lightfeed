@@ -17,9 +17,9 @@ class LightfeedConfig(TypedDict, total=False):
 class Timestamps(TypedDict):
     """Timestamp object for records"""
     
-    first_seen_time: str  # ISO 8601 timestamp when the record was first seen
-    last_changed_time: str  # ISO 8601 timestamp when the record was last changed
-    last_seen_time: str  # ISO 8601 timestamp when the record was last seen
+    created_at: str  # ISO 8601 timestamp when the record was first seen
+    changed_at: str  # ISO 8601 timestamp when the record was last changed
+    synced_at: str  # ISO 8601 timestamp when the record was last seen
 
 
 class Record(TypedDict, total=False):

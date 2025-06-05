@@ -19,11 +19,11 @@ export interface LightfeedConfig {
  */
 export interface Timestamps {
   /** ISO 8601 timestamp when the record was first seen */
-  first_seen_time: string;
+  created_at: string;
   /** ISO 8601 timestamp when the record was last changed */
-  last_changed_time: string;
+  changed_at: string;
   /** ISO 8601 timestamp when the record was last seen */
-  last_seen_time: string;
+  synced_at: string;
 }
 
 /**
