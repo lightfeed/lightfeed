@@ -48,9 +48,9 @@ class TestLightfeedClient(unittest.TestCase):
                     "id": 1,
                     "data": {"name": "Test Record"},
                     "timestamps": {
-                        "first_seen_time": "2023-01-01T00:00:00Z",
-                        "last_changed_time": "2023-01-02T00:00:00Z",
-                        "last_seen_time": "2023-01-03T00:00:00Z"
+                        "created_at": "2023-01-01T00:00:00Z",
+                        "changed_at": "2023-01-02T00:00:00Z",
+                        "synced_at": "2023-01-03T00:00:00Z"
                     }
                 }
             ],
@@ -94,9 +94,9 @@ class TestLightfeedClient(unittest.TestCase):
                     "id": 1,
                     "data": {"name": "Test Record"},
                     "timestamps": {
-                        "first_seen_time": "2023-01-01T00:00:00Z",
-                        "last_changed_time": "2023-01-02T00:00:00Z",
-                        "last_seen_time": "2023-01-03T00:00:00Z"
+                        "created_at": "2023-01-01T00:00:00Z",
+                        "changed_at": "2023-01-02T00:00:00Z",
+                        "synced_at": "2023-01-03T00:00:00Z"
                     },
                     "relevance_score": 0.9
                 }
@@ -143,9 +143,9 @@ class TestLightfeedClient(unittest.TestCase):
                     "id": 1,
                     "data": {"name": "Test Record", "category": "Test"},
                     "timestamps": {
-                        "first_seen_time": "2023-01-01T00:00:00Z",
-                        "last_changed_time": "2023-01-02T00:00:00Z",
-                        "last_seen_time": "2023-01-03T00:00:00Z"
+                        "created_at": "2023-01-01T00:00:00Z",
+                        "changed_at": "2023-01-02T00:00:00Z",
+                        "synced_at": "2023-01-03T00:00:00Z"
                     }
                 }
             ],

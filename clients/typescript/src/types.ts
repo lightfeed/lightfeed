@@ -18,12 +18,12 @@ export interface LightfeedConfig {
  * Timestamp object for records
  */
 export interface Timestamps {
-  /** ISO 8601 timestamp when the record was first seen */
-  first_seen_time: string;
+  /** ISO 8601 timestamp when the record was first created */
+  created_at: string;
   /** ISO 8601 timestamp when the record was last changed */
-  last_changed_time: string;
-  /** ISO 8601 timestamp when the record was last seen */
-  last_seen_time: string;
+  changed_at: string;
+  /** ISO 8601 timestamp when the record was last synced */
+  synced_at: string;
 }
 
 /**
@@ -66,9 +66,9 @@ export interface RecordsResponse {
  * Query parameters for retrieving records
  */
 export interface GetRecordsParams {
-  /** Start of last seen time range (ISO 8601 timestamp) */
+  /** Start of last synced time range (ISO 8601 timestamp) */
   start_time?: string;
-  /** End of last seen time range (ISO 8601 timestamp) */
+  /** End of last synced time range (ISO 8601 timestamp) */
   end_time?: string;
   /** Maximum number of records to return (default: 100, max: 500) */
   limit?: number;
@@ -80,9 +80,9 @@ export interface GetRecordsParams {
  * Time range for filtering records
  */
 export interface TimeRange {
-  /** Start of last seen time range (ISO 8601 timestamp) */
+  /** Start of last synced time range (ISO 8601 timestamp) */
   start_time?: string;
-  /** End of last seen time range (ISO 8601 timestamp) */
+  /** End of last synced time range (ISO 8601 timestamp) */
   end_time?: string;
 }
 
