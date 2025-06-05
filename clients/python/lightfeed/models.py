@@ -17,9 +17,9 @@ class LightfeedConfig(TypedDict, total=False):
 class Timestamps(TypedDict):
     """Timestamp object for records"""
     
-    created_at: str  # ISO 8601 timestamp when the record was first seen
+    created_at: str  # ISO 8601 timestamp when the record was first created
     changed_at: str  # ISO 8601 timestamp when the record was last changed
-    synced_at: str  # ISO 8601 timestamp when the record was last seen
+    synced_at: str  # ISO 8601 timestamp when the record was last synced
 
 
 class Record(TypedDict, total=False):
@@ -49,8 +49,8 @@ class RecordsResponse(TypedDict):
 class GetRecordsParams(TypedDict, total=False):
     """Query parameters for retrieving records"""
     
-    start_time: Optional[str]  # Start of last seen time range (ISO 8601 timestamp)
-    end_time: Optional[str]  # End of last seen time range (ISO 8601 timestamp)
+    start_time: Optional[str]  # Start of last synced time range (ISO 8601 timestamp)
+    end_time: Optional[str]  # End of last synced time range (ISO 8601 timestamp)
     limit: Optional[int]  # Maximum number of records to return (default: 100, max: 500)
     cursor: Optional[str]  # Cursor for pagination (from previous response)
 
@@ -58,8 +58,8 @@ class GetRecordsParams(TypedDict, total=False):
 class TimeRange(TypedDict, total=False):
     """Time range for filtering records"""
     
-    start_time: Optional[str]  # Start of last seen time range (ISO 8601 timestamp)
-    end_time: Optional[str]  # End of last seen time range (ISO 8601 timestamp)
+    start_time: Optional[str]  # Start of last synced time range (ISO 8601 timestamp)
+    end_time: Optional[str]  # End of last synced time range (ISO 8601 timestamp)
 
 
 class PaginationParams(TypedDict, total=False):
