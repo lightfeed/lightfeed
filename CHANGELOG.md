@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 
+## [py-0.1.6 & ts-0.1.6] - 2025-06-04
+### Changed
+- Changed timestamp fields to created_at, changed_at and synced_at
+
 ## [py-0.1.5 & ts-0.1.5] - 2025-05-22
 ### Fixed
 - Fixed operator types in filter
