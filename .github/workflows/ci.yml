@@ -1,6 +1,6 @@
 name: CI Tests
 
-# CI workflow for lightfeed/lightfeed repository
+# CI workflow for lightfeed/sdk repository
 # Runs tests for both Python and TypeScript clients on every push to main
 
 on:

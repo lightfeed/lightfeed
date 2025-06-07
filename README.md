@@ -8,15 +8,15 @@
 </p>
 
 <div align="center">
-  <a href="https://www.npmjs.com/package/lightfeed">
-    <img src="https://img.shields.io/npm/v/lightfeed?logo=npm" alt="npm" /></a>
-  <a href="https://pypi.org/project/lightfeed/">
-    <img src="https://img.shields.io/pypi/v/lightfeed?logo=pypi&logoColor=white" alt="PyPI" /></a>
-  <a href="https://github.com/lightfeed/lightfeed/actions/workflows/ci.yml">
-    <img src="https://img.shields.io/github/actions/workflow/status/lightfeed/lightfeed/ci.yml?branch=main"
+  <a href="https://www.npmjs.com/package/@lightfeed/sdk">
+    <img src="https://img.shields.io/npm/v/@lightfeed/sdk?logo=npm" alt="npm" /></a>
+  <a href="https://pypi.org/project/lightfeed-sdk/">
+    <img src="https://img.shields.io/pypi/v/lightfeed-sdk?logo=pypi&logoColor=white" alt="PyPI" /></a>
+  <a href="https://github.com/lightfeed/sdk/actions/workflows/ci.yml">
+    <img src="https://img.shields.io/github/actions/workflow/status/lightfeed/sdk/ci.yml?branch=main"
         alt="Test status (main branch)"></a>
-  <a href="https://github.com/lightfeed/lightfeed/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/lightfeed/lightfeed" alt="License" /></a>
+  <a href="https://github.com/lightfeed/sdk/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/lightfeed/sdk" alt="License" /></a>
 </div>
 <div>
   <p align="center">
@@ -44,13 +44,13 @@
 ### TypeScript / Node.js
 
 ```bash
-npm install lightfeed
+npm install @lightfeed/sdk
 ```
 
 ### Python
 
 ```bash
-pip install lightfeed
+pip install lightfeed-sdk
 ```
 
 ## Quick Start
@@ -58,7 +58,7 @@ pip install lightfeed
 ### TypeScript / Node.js
 
 ```typescript
-import { LightfeedClient } from 'lightfeed';
+import { LightfeedClient } from '@lightfeed/sdk';
 
 // Initialize client with your API key
 const client = new LightfeedClient({
@@ -110,7 +110,7 @@ async function searchForCompanies() {
 ### Python
 
 ```python
-from lightfeed import LightfeedClient, Condition, Operator
+from lightfeed-sdk import LightfeedClient, Condition, Operator
 
 # Initialize client with your API key
 client = LightfeedClient({
@@ -365,7 +365,7 @@ try {
 ### Python Example
 
 ```python
-from lightfeed import LightfeedError
+from lightfeed-sdk import LightfeedError
 
 try:
     records = client.get_records("your-database-id")

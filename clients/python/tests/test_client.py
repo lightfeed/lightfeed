@@ -9,7 +9,7 @@ from unittest.mock import patch, Mock
 import requests
 from requests.exceptions import RequestException
 
-from lightfeed import LightfeedClient
+from lightfeed-sdk import LightfeedClient
 from lightfeed.models import Condition, Operator, LightfeedError
 
 

@@ -1,7 +1,7 @@
 // Test script for the Lightfeed TypeScript client
 require("dotenv").config({ path: ".env" });
 
-import { LightfeedClient } from "lightfeed";
+import { LightfeedClient } from "@lightfeed/sdk";
 
 // Initialize client with your API key
 const client = new LightfeedClient({
