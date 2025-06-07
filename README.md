@@ -1,5 +1,10 @@
+<h1 align="center">
+  <img src="https://www.lightfeed.ai/docs/img/logo.svg" width="32" height="32" alt="Lightfeed Logo"/>
+  Lightfeed SDK
+</h1>
+
 <p align="center">
-  <img src="https://www.lightfeed.ai/docs/img/logo.svg" width="128" height="128" alt="Lightfeed Logo" />
+  <strong>Official SDK for real-time search and filtering via the Lightfeed API</strong>
 </p>
 
 <div align="center">
@@ -26,17 +31,9 @@
   </p>
 </div>
 
-# ⚡️ Lightfeed
-
-Official Typescript/Python client library for interacting with the Lightfeed API. This SDK enables real-time search and filtering of your extracted web data.
-
-<p align="center">
-  <img src="https://www.lightfeed.ai/docs/img/blog/introducing-lightfeed-extract.png" alt="Lightfeed Extract" width="100%">
-</p>
-
 ## Features
 
-- Simple and intuitive interface for accessing Lightfeed APIs
+- Simple and intuitive interface for accessing Lightfeed API
 - Semantic search and advanced filtering capabilities
 - Full TypeScript/Python type definitions for better developer experience
 - Comprehensive error handling
