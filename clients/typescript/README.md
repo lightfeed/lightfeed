@@ -13,13 +13,13 @@ Official Node.js client library for interacting with the Lightfeed API. Extract,
 ## Installation
 
 ```bash
-npm install lightfeed
+npm install @lightfeed/sdk
 ```
 
 ## Quick Start
 
 ```typescript
-import { LightfeedClient } from 'lightfeed';
+import { LightfeedClient } from '@lightfeed/sdk';
 
 // Initialize client with your API key
 const client = new LightfeedClient({
@@ -183,5 +183,5 @@ For comprehensive documentation and guides, visit the [Lightfeed Documentation](
 
 If you need assistance with your implementation:
 - Email us at support@lightfeed.ai
-- Open an issue in the [GitHub repository](https://github.com/lightfeed/lightfeed)
+- Open an issue in the [GitHub repository](https://github.com/lightfeed/sdk)
 - Join our [Discord community](https://discord.gg/txZ2s4pgQJ) 

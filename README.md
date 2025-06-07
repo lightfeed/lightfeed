@@ -1,17 +1,22 @@
+<h1 align="center">
+  <img src="https://www.lightfeed.ai/docs/img/logo.svg" width="32" height="32" alt="Lightfeed Logo"/>
+  Lightfeed SDK
+</h1>
+
 <p align="center">
-  <img src="https://www.lightfeed.ai/docs/img/logo.svg" width="128" height="128" alt="Lightfeed Logo" />
+  <strong>Official SDK for real-time search and filtering via the Lightfeed API</strong>
 </p>
 
 <div align="center">
-  <a href="https://www.npmjs.com/package/lightfeed">
-    <img src="https://img.shields.io/npm/v/lightfeed?logo=npm" alt="npm" /></a>
-  <a href="https://pypi.org/project/lightfeed/">
-    <img src="https://img.shields.io/pypi/v/lightfeed?logo=pypi&logoColor=white" alt="PyPI" /></a>
-  <a href="https://github.com/lightfeed/lightfeed/actions/workflows/ci.yml">
-    <img src="https://img.shields.io/github/actions/workflow/status/lightfeed/lightfeed/ci.yml?branch=main"
+  <a href="https://www.npmjs.com/package/@lightfeed/sdk">
+    <img src="https://img.shields.io/npm/v/@lightfeed/sdk?logo=npm" alt="npm" /></a>
+  <a href="https://pypi.org/project/lightfeed-sdk/">
+    <img src="https://img.shields.io/pypi/v/lightfeed-sdk?logo=pypi&logoColor=white" alt="PyPI" /></a>
+  <a href="https://github.com/lightfeed/sdk/actions/workflows/ci.yml">
+    <img src="https://img.shields.io/github/actions/workflow/status/lightfeed/sdk/ci.yml?branch=main"
         alt="Test status (main branch)"></a>
-  <a href="https://github.com/lightfeed/lightfeed/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/lightfeed/lightfeed" alt="License" /></a>
+  <a href="https://github.com/lightfeed/sdk/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/lightfeed/sdk" alt="License" /></a>
 </div>
 <div>
   <p align="center">
@@ -26,17 +31,9 @@
   </p>
 </div>
 
-# ⚡️ Lightfeed
-
-Official Typescript/Python client library for interacting with the Lightfeed API. This SDK enables real-time search and filtering of your extracted web data.
-
-<p align="center">
-  <img src="https://www.lightfeed.ai/docs/img/blog/introducing-lightfeed-extract.png" alt="Lightfeed Extract" width="100%">
-</p>
-
 ## Features
 
-- Simple and intuitive interface for accessing Lightfeed APIs
+- Simple and intuitive interface for accessing Lightfeed API
 - Semantic search and advanced filtering capabilities
 - Full TypeScript/Python type definitions for better developer experience
 - Comprehensive error handling
@@ -47,13 +44,13 @@ Official Typescript/Python client library for interacting with the Lightfeed API
 ### TypeScript / Node.js
 
 ```bash
-npm install lightfeed
+npm install @lightfeed/sdk
 ```
 
 ### Python
 
 ```bash
-pip install lightfeed
+pip install lightfeed-sdk
 ```
 
 ## Quick Start
@@ -61,7 +58,7 @@ pip install lightfeed
 ### TypeScript / Node.js
 
 ```typescript
-import { LightfeedClient } from 'lightfeed';
+import { LightfeedClient } from '@lightfeed/sdk';
 
 // Initialize client with your API key
 const client = new LightfeedClient({
@@ -113,7 +110,7 @@ async function searchForCompanies() {
 ### Python
 
 ```python
-from lightfeed import LightfeedClient, Condition, Operator
+from lightfeed-sdk import LightfeedClient, Condition, Operator
 
 # Initialize client with your API key
 client = LightfeedClient({
@@ -368,7 +365,7 @@ try {
 ### Python Example
 
 ```python
-from lightfeed import LightfeedError
+from lightfeed-sdk import LightfeedError
 
 try:
     records = client.get_records("your-database-id")

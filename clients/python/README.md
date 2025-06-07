@@ -19,7 +19,7 @@ pip install lightfeed
 ## Quick Start
 
 ```python
-from lightfeed import LightfeedClient, Condition, Operator
+from lightfeed-sdk import LightfeedClient, Condition, Operator
 
 # Initialize client with your API key
 client = LightfeedClient({
@@ -153,7 +153,7 @@ client = LightfeedClient({
 The client library handles HTTP errors from the API and converts them into structured `LightfeedError` objects.
 
 ```python
-from lightfeed import LightfeedError
+from lightfeed-sdk import LightfeedError
 
 try:
     records = client.get_records("your-database-id")
@@ -176,5 +176,5 @@ For comprehensive documentation and guides, visit the [Lightfeed Documentation](
 
 If you need assistance with your implementation:
 - Email us at support@lightfeed.ai
-- Open an issue in the [GitHub repository](https://github.com/lightfeed/lightfeed)
+- Open an issue in the [GitHub repository](https://github.com/lightfeed/sdk)
 - Join our [Discord community](https://discord.gg/txZ2s4pgQJ) 

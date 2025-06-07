@@ -1,7 +1,7 @@
 {
-  "name": "lightfeed",
-  "version": "0.1.6",
-  "description": "Lightfeed API Client for Node.js",
+  "name": "@lightfeed/sdk",
+  "version": "0.1.7",
+  "description": "Lightfeed SDK for Node.js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -24,7 +24,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lightfeed/lightfeed"
+    "url": "https://github.com/lightfeed/sdk"
   },
   "homepage": "https://www.lightfeed.ai/docs/apis/",
   "devDependencies": {
