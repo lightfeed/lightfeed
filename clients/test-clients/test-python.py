@@ -3,7 +3,7 @@
 
 import os
 from dotenv import load_dotenv
-from lightfeed-sdk import LightfeedClient, Operator
+from lightfeed import LightfeedClient, Operator
 
 # Load environment variables from .env file
 load_dotenv()
